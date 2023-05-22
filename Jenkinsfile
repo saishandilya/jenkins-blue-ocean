@@ -22,7 +22,8 @@ ls -lah'''
         fileExists 'blueocean.txt'
         sh '''#!/bin/bash  
 
-taskcat --version'''
+taskcat --version
+ls -lah'''
       }
     }
 
