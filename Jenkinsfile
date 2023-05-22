@@ -2,11 +2,22 @@ pipeline {
   agent any
   stages {
     stage('pre-build') {
-      steps {
-        sh '''#!/bin/bash
+      parallel {
+        stage('pre-build') {
+          steps {
+            sh '''#!/bin/bash
 
 # Bash script  
 ls -lah'''
+          }
+        }
+
+        stage('parallel') {
+          steps {
+            echo 'this is parallel test'
+          }
+        }
+
       }
     }
 
