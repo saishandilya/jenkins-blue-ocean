@@ -34,7 +34,15 @@ ls -lah'''
         sh '''#!/bin/bash  
 
 taskcat --version
+java --version
+aws --version
 ls -lah'''
+      }
+    }
+
+    stage('final') {
+      steps {
+        cleanWs(cleanWhenAborted: true, cleanWhenFailure: true, cleanWhenSuccess: true, cleanWhenUnstable: true, cleanWhenNotBuilt: true)
       }
     }
 
